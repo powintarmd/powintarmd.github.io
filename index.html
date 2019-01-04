@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="There is no accident. You must believe.">
+  
+
+  
+  <meta name="keywords" content="momoda">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>momoda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="There is no accident. You must believe.">
+<meta name="keywords" content="momoda">
+<meta property="og:type" content="website">
+<meta property="og:title" content="momoda">
+<meta property="og:url" content="https://astwish.github.io/index.html">
+<meta property="og:site_name" content="momoda">
+<meta property="og:description" content="There is no accident. You must believe.">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="momoda">
+<meta name="twitter:description" content="There is no accident. You must believe.">
+  
+    <link rel="alternative" href="/atom.xml" title="momoda" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="momoda" rel="home">momoda</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">momoda blog</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/atom.xml">RSS</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/sitemap.xml">Site map</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/more/followme.html">Follow me</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-Docker-Notes-by-CS-Notes" class="post-Docker-Notes-by-CS-Notes post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/Docker-Notes-by-CS-Notes/">Docker-Notesby-CS-Notes.md</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://astwish.github.io/Docker-Notes-by-CS-Notes/" data-id="cjqiffxb10002kus6429iql88" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <!-- GFM-TOC -->
+<ul>
+<li><a href="#一解决的问题">一、解决的问题</a></li>
+<li><a href="#二与虚拟机的比较">二、与虚拟机的比较</a></li>
+<li><a href="#三优势">三、优势</a></li>
+<li><a href="#四使用场景">四、使用场景</a></li>
+<li><a href="#五镜像与容器">五、镜像与容器</a></li>
+<li><a href="#参考资料">参考资料</a><!-- GFM-TOC -->
+</li>
+</ul>
+<h1 id="一、解决的问题"><a href="#一、解决的问题" class="headerlink" title="一、解决的问题"></a>一、解决的问题</h1><p>由于不同的机器有不同的操作系统，以及不同的库和组件，在将一个应用部署到多台机器上需要进行大量的环境配置操作。</p>
+<p>Docker 主要解决环境配置问题，它是一种虚拟化技术，对进程进行隔离，被隔离的进程独立于宿主操作系统和其它隔离的进程。使用 Docker 可以不修改应用程序代码，不需要开发人员学习特定环境下的技术，就能够将现有的应用程序部署在其他机器中。</p>
+<p><div align="center"> <img src="/Docker-Notes-by-CS-Notes/pics/011f3ef6-d824-4d43-8b2c-36dab8eaaa72-1.png" width="400px"> </div><br></p>
+<h1 id="二、与虚拟机的比较"><a href="#二、与虚拟机的比较" class="headerlink" title="二、与虚拟机的比较"></a>二、与虚拟机的比较</h1><p>虚拟机也是一种虚拟化技术，它与 Docker 最大的区别在于它是通过模拟硬件，并在硬件上安装操作系统来实现。</p>
+<p><div align="center"> <img src="/Docker-Notes-by-CS-Notes/pics/71f61bc3-582d-4c27-8bdd-dc7fb135bf8f.png" width="250px"> </div><br></p>
+<p><div align="center"> <img src="/Docker-Notes-by-CS-Notes/pics/7e873b60-44dc-4911-b080-defd5b8f0b49.png" width="250"> </div><br></p>
+<h2 id="启动速度"><a href="#启动速度" class="headerlink" title="启动速度"></a>启动速度</h2><p>启动虚拟机需要启动虚拟机的操作系统，再启动应用，这个过程非常慢；</p>
+<p>而启动 Docker 相当于启动宿主操作系统上的一个进程。</p>
+<h2 id="占用资源"><a href="#占用资源" class="headerlink" title="占用资源"></a>占用资源</h2><p>虚拟机是一个完整的操作系统，需要占用大量的磁盘、内存和 CPU，一台机器只能开启几十个的虚拟机。</p>
+<p>而 Docker 只是一个进程，只需要将应用以及相关的组件打包，在运行时占用很少的资源，一台机器可以开启成千上万个 Docker。</p>
+<h1 id="三、优势"><a href="#三、优势" class="headerlink" title="三、优势"></a>三、优势</h1><p>除了启动速度快以及占用资源少之外，Docker 具有以下优势：</p>
+<h2 id="更容易迁移"><a href="#更容易迁移" class="headerlink" title="更容易迁移"></a>更容易迁移</h2><p>提供一致性的运行环境，可以在不同的机器上进行迁移，而不用担心环境变化导致无法运行。</p>
+<h2 id="更容易维护"><a href="#更容易维护" class="headerlink" title="更容易维护"></a>更容易维护</h2><p>使用分层技术和镜像，使得应用可以更容易复用重复部分。复用程度越高，维护工作也越容易。</p>
+<h2 id="更容易扩展"><a href="#更容易扩展" class="headerlink" title="更容易扩展"></a>更容易扩展</h2><p>可以使用基础镜像进一步扩展得到新的镜像，并且官方和开源社区提供了大量的镜像，通过扩展这些镜像可以非常容易得到我们想要的镜像。</p>
+<h1 id="四、使用场景"><a href="#四、使用场景" class="headerlink" title="四、使用场景"></a>四、使用场景</h1><h2 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h2><p>持续集成指的是频繁地将代码集成到主干上，这样能够更快地发现错误。</p>
+<p>Docker 具有轻量级以及隔离性的特点，在将代码集成到一个 Docker 中不会对其它 Docker 产生影响。</p>
+<h2 id="提供可伸缩的云服务"><a href="#提供可伸缩的云服务" class="headerlink" title="提供可伸缩的云服务"></a>提供可伸缩的云服务</h2><p>根据应用的负载情况，可以很容易地增加或者减少 Docker。</p>
+<h2 id="搭建微服务架构"><a href="#搭建微服务架构" class="headerlink" title="搭建微服务架构"></a>搭建微服务架构</h2><p>Docker 轻量级的特点使得它很适合用于部署、维护、组合微服务。</p>
+<h1 id="五、镜像与容器"><a href="#五、镜像与容器" class="headerlink" title="五、镜像与容器"></a>五、镜像与容器</h1><p>镜像是一种静态的结构，可以看成面向对象里面的类，而容器是镜像的一个实例。</p>
+<p>镜像包含着容器运行时所需要的代码以及其它组件，它是一种分层结构，每一层都是只读的（read-only layers）。构建镜像时，会一层一层构建，前一层是后一层的基础。镜像的这种分层存储结构很适合镜像的复用以及定制。</p>
+<p>构建容器时，通过在镜像的基础上添加一个可写层（writable layer），用来保存着容器运行过程中的修改。</p>
+<p><div align="center"> <img src="/Docker-Notes-by-CS-Notes/pics/docker-filesystems-busyboxrw.png"> </div><br></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="https://blog.docker.com/2017/08/docker-101-introduction-docker-webinar-recap/" target="_blank" rel="noopener">DOCKER 101: INTRODUCTION TO DOCKER WEBINAR RECAP</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">Docker 入门教程</a></li>
+<li><a href="http://www.bogotobogo.com/DevOps/Docker/Docker_Container_vs_Virtual_Machine.php" target="_blank" rel="noopener">Docker container vs Virtual machine</a></li>
+<li><a href="https://linoxide.com/linux-how-to/dockerfile-create-docker-container/" target="_blank" rel="noopener">How to Create Docker Container using Dockerfile</a></li>
+<li><a href="http://www.cnblogs.com/sammyliu/p/5877964.html" target="_blank" rel="noopener">理解 Docker（2）：Docker 镜像</a></li>
+<li><a href="https://yeasy.gitbooks.io/docker_practice/introduction/why.html" target="_blank" rel="noopener">为什么要使用 Docker？</a></li>
+<li><a href="https://www.docker.com/what-docker" target="_blank" rel="noopener">What is Docker</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/09/continuous-integration.html" target="_blank" rel="noopener">持续集成是什么？</a></li>
+</ul>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/Docker-Notes-by-CS-Notes/">
+    <time datetime="2019-01-03T13:49:30.000Z" class="entry-date">
+        1月 3 2019
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/通用技术/">通用技术</a>, <a class="article-category-link" href="/categories/通用技术/Docker/">Docker</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CS-Notes/">CS-Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-将PEM证书转换为PFX,P12格式" class="post-将PEM证书转换为PFX,P12格式 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/将PEM证书转换为PFX,P12格式/">将PEM证书转换为PFX,P12格式</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://astwish.github.io/将PEM证书转换为PFX,P12格式/" data-id="cjqiffxbd0008kus6sc0tintk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>PEM 证书不受支持，它们必须转换为 PKCS#12 (PFX/P12) 格式。</p>
+<h2 id="证书转换"><a href="#证书转换" class="headerlink" title="证书转换"></a>证书转换</h2><blockquote>
+<ul>
+<li>转至 <a href="https://www.openssl.org/community/binaries.html" target="_blank" rel="noopener">https://www.openssl.org/community/binaries.html</a></li>
+<li>下载并安装openssl, 已经安装的则可直接使用openssl.</li>
+<li>从 OpenSSL 安装 bin 文件夹运行以下命令格式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl pkcs12 -export -out Cert.p12 -in cert.pem -inkey key.pem -passin pass:root -passout pass:root</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><strong>[Reference]</strong><br>将 PEM 证书转换为 PFX/P12 格式<br><a href="https://www.ibm.com/support/knowledgecenter/zh/SSPH29_9.0.3/com.ibm.help.common.infocenter.aps/t_ConvertthepfxCertificatetopemFormat068.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/SSPH29_9.0.3/com.ibm.help.common.infocenter.aps/t_ConvertthepfxCertificatetopemFormat068.html</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/将PEM证书转换为PFX,P12格式/">
+    <time datetime="2018-02-16T03:37:15.000Z" class="entry-date">
+        2月 16 2018
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/协议证书/">协议证书</a>, <a class="article-category-link" href="/categories/协议证书/openssl/">openssl</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PEM证书/">PEM证书</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openssl/">openssl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p12/">p12</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pfx/">pfx</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-openwrt定时任务设置" class="post-openwrt定时任务设置 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/openwrt定时任务设置/">openwrt定时任务设置</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://astwish.github.io/openwrt定时任务设置/" data-id="cjqiffxb90005kus6jex2x5cc" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="定时任务设置示例"><a href="#定时任务设置示例" class="headerlink" title="定时任务设置示例"></a>定时任务设置示例</h2><p>使用 crontab -e 编辑 Openwrt 的定时任务，添加如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Reboot at 4:30am every day</span><br><span class="line"># Note: To avoid infinite reboot loop, wait 70 seconds</span><br><span class="line"># and touch a file in /etc so clock will be set</span><br><span class="line"># properly to 4:31 on reboot before cron starts.</span><br><span class="line">30 4 * * * sleep 70 &amp;&amp; touch /etc/banner &amp;&amp; reboot</span><br></pre></td></tr></table></figure></p>
+<p>这个 task 将在每天 4:30am 的时候重启路由器。</p>
+<p>需要注意的是，一定要延迟重启，否则可能无限重启，官方给出的配置1中，在 sleep 70 秒之后，使用 touch 写文件，应为路由器如果没有及时联网从NTP服务器上获取到实践，那么路由器的系统时间和重启的系统时间便一样，如果修改过文件，Openwrt 开机后会把最后修改或者访问的文件时间作为默认系统时间。因此延迟1min重启，可以避免这个问题。</p>
+<p><strong>[Reference]</strong><br>Cron and crontab<br><a href="https://openwrt.org/docs/guide-user/base-system/cron" target="_blank" rel="noopener">https://openwrt.org/docs/guide-user/base-system/cron</a></p>
+<p>使用 Cron 定时重启 Openwrt 路由器<br><a href="http://einverne.github.io/post/2017/03/auto-reboot-openwrt.html" target="_blank" rel="noopener">http://einverne.github.io/post/2017/03/auto-reboot-openwrt.html</a></p>
+<p>LEDE/OpenWRT — Scheduling Tasks<br><a href="https://medium.com/openwrt-iot/openwrt-scheduling-tasks-6e19d507ae45" target="_blank" rel="noopener">https://medium.com/openwrt-iot/openwrt-scheduling-tasks-6e19d507ae45</a></p>
+<p>System configuration<br><a href="https://oldwiki.archive.openwrt.org/doc/uci/system#time_zones" target="_blank" rel="noopener">https://oldwiki.archive.openwrt.org/doc/uci/system#time_zones</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/openwrt定时任务设置/">
+    <time datetime="2017-09-16T05:01:24.000Z" class="entry-date">
+        9月 16 2017
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/路由器/">路由器</a>, <a class="article-category-link" href="/categories/路由器/openwrt/">openwrt</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cron/">cron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openwrt/">openwrt</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-cpp-检测机器大端或者小端" class="post-cpp-检测机器大端或者小端 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/cpp-检测机器大端或者小端/">cpp-检测机器大端或者小端</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://astwish.github.io/cpp-检测机器大端或者小端/" data-id="cjqiffxar0000kus6l9b2vr9j" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>今天在csdn上看到的 自己改进了一下发出来<br>小端输出1 大端输出0<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span></span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">char</span> c[<span class="number">4</span>];</span><br><span class="line">&#125; test;</span><br><span class="line">test.i = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">int</span>(test.c[<span class="number">0</span>]) &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>[More Reference]</strong><br>大小端字节序存在的意义，为什么不用一个标准呢？<br><a href="https://www.zhihu.com/question/25311159" target="_blank" rel="noopener">https://www.zhihu.com/question/25311159</a>   </p>
+<p>“字节序”是个什么鬼？<br><a href="https://zhuanlan.zhihu.com/p/21388517" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21388517</a>   </p>
+<p>大小端存储模式精解<br><a href="https://jocent.me/2017/07/25/big-little-endian.html" target="_blank" rel="noopener">https://jocent.me/2017/07/25/big-little-endian.html</a>   </p>
+<p>详解大端模式和小端模式<br><a href="https://blog.csdn.net/ce123_zhouwei/article/details/6971544" target="_blank" rel="noopener">https://blog.csdn.net/ce123_zhouwei/article/details/6971544</a>   </p>
+<p>主机字节序与网络字节序<br><a href="https://blog.csdn.net/hou09tian/article/details/82759758" target="_blank" rel="noopener">https://blog.csdn.net/hou09tian/article/details/82759758</a>   </p>
+<p>Linux程序设计学习笔记—-网络编程之网络数据包拆封包与字节顺序大小端<br><a href="https://blog.csdn.net/suool/article/details/38636993?utm_source=tuicool" target="_blank" rel="noopener">https://blog.csdn.net/suool/article/details/38636993?utm_source=tuicool</a>    </p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/cpp-检测机器大端或者小端/">
+    <time datetime="2015-11-13T09:11:02.000Z" class="entry-date">
+        11月 13 2015
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/网络通讯/">网络通讯</a>, <a class="article-category-link" href="/categories/网络通讯/大小端/">大小端</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大小端/">大小端</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-简约不简单" class="post-简约不简单 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/简约不简单/">简约不简单</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://astwish.github.io/简约不简单/" data-id="cjqiffxbo000akus6sbquonny" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <blockquote>
+<p>简约不简单<br>Brief, but not simple.</p>
+</blockquote>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/简约不简单/">
+    <time datetime="2014-01-26T13:31:15.000Z" class="entry-date">
+        1月 26 2014
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/默认/">默认</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/默认/">默认</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+  
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="q">
+        <input type="submit" id="searchsubmit" value="google搜索">
+    </div>
+</form></aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/Docker-Notes-by-CS-Notes/">Docker-Notesby-CS-Notes.md</a>
+          </li>
+        
+          <li>
+            <a href="/将PEM证书转换为PFX,P12格式/">将PEM证书转换为PFX,P12格式</a>
+          </li>
+        
+          <li>
+            <a href="/openwrt定时任务设置/">openwrt定时任务设置</a>
+          </li>
+        
+          <li>
+            <a href="/cpp-检测机器大端或者小端/">cpp-检测机器大端或者小端</a>
+          </li>
+        
+          <li>
+            <a href="/简约不简单/">简约不简单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget-content">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/协议证书/">协议证书</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/协议证书/openssl/">openssl</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络通讯/">网络通讯</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络通讯/大小端/">大小端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/路由器/">路由器</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/路由器/openwrt/">openwrt</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/通用技术/">通用技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/通用技术/Docker/">Docker</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS-Notes/">CS-Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEM证书/">PEM证书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cron/">cron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openssl/">openssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/">openwrt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p12/">p12</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pfx/">pfx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小端/">大小端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/默认/">默认</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/CS-Notes/" style="font-size: 10px;">CS-Notes</a> <a href="/tags/PEM证书/" style="font-size: 10px;">PEM证书</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/openwrt/" style="font-size: 10px;">openwrt</a> <a href="/tags/p12/" style="font-size: 10px;">p12</a> <a href="/tags/pfx/" style="font-size: 10px;">pfx</a> <a href="/tags/大小端/" style="font-size: 10px;">大小端</a> <a href="/tags/默认/" style="font-size: 10px;">默认</a>
+    </div>
+  </aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget-content">
+		<ul id="link-list">
+		<!-- link begin -->
+
+		<li><a href="https://www.jiumodiary.com/">jiumodiary</a></li>
+		<li><a href="http://www.led-card-china.com/">LED Card & LED Display Parts Online Store</a></li>
+		
+		<!-- link end -->
+		</ul>
+    </div>
+</aside>
+
+  
+    <aside class="widget">
+    <h3 class="widget-title">Ads</h3>
+    <div class="widget-content">
+    
+		<div style="clear:both;float:none;text-align:center;margin:2em auto;display: inline-block ! important;width: 100%;max-width: 100%;">
+		
+			<a href="http://qr.jirengu.com/api/taskUrl?tid=10" title="饥人谷" target="_blank" style="border:none;"><img alt="饥人谷" src="https://www.wangbase.com/blogimg/asset/201809/bg2018090401.png" style="border:none;display: block ! important;max-width: 100%;width: 100%;max-width: 100%;"></a>
+			
+			<br>
+			
+			<a href="http://www.aiqianduan.com/?ryf" title="爱前端" target="_blank" style="border:none;"><img alt="爱前端" src="https://www.wangbase.com/blogimg/asset/201811/bg2018110701.jpg" style="border:none;display: block ! important;max-width: 100%;width: 100%;max-width: 100%;"></a>
+			
+		</div>
+ 
+    </div>
+</aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2019 astwish
+    All rights reserved.</p>
+    <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
