@@ -15,11 +15,12 @@ function pause(){
 # pause 'Press any key to continue...'
 # hexo d
 # pause 'Press any key to continue...'
-git init
-git add .
-git commit -m "first commit"
-git branch -M master
-git remote add origin git@github.com:powintarmd/powintarmd.github.io.git
+# git init
+# git add .
+# git commit -m "first commit"
+# git branch -M master
+# git remote add origin git@github.com:powintarmd/powintarmd.github.io.git
+git remote set-url --add origin git@github.com:powintarmd/powintarmd.github.io.git
 
 git status
 pause 'Press any key to continue...'
