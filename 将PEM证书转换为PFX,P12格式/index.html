@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="There is no accident. You must believe. More practice, more thinking.">
+  
+
+  
+  <meta name="keywords" content="powintarmd">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>将PEM证书转换为PFX,P12格式 | powintarmd blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="场景PEM 证书不受支持，它们必须转换为 PKCS#12 (PFX/P12) 格式。 证书转换  转至 https://www.openssl.org/community/binaries.html 下载并安装openssl, 已经安装的则可直接使用openssl. 从 OpenSSL 安装 bin 文件夹运行以下命令格式。1# openssl pkcs12 -export -out Cert.p">
+<meta name="keywords" content="PEM证书,openssl,pfx,p12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将PEM证书转换为PFX,P12格式">
+<meta property="og:url" content="https://powintarmd.github.io/将PEM证书转换为PFX,P12格式/index.html">
+<meta property="og:site_name" content="powintarmd blog">
+<meta property="og:description" content="场景PEM 证书不受支持，它们必须转换为 PKCS#12 (PFX/P12) 格式。 证书转换  转至 https://www.openssl.org/community/binaries.html 下载并安装openssl, 已经安装的则可直接使用openssl. 从 OpenSSL 安装 bin 文件夹运行以下命令格式。1# openssl pkcs12 -export -out Cert.p">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-04T17:37:14.103Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="将PEM证书转换为PFX,P12格式">
+<meta name="twitter:description" content="场景PEM 证书不受支持，它们必须转换为 PKCS#12 (PFX/P12) 格式。 证书转换  转至 https://www.openssl.org/community/binaries.html 下载并安装openssl, 已经安装的则可直接使用openssl. 从 OpenSSL 安装 bin 文件夹运行以下命令格式。1# openssl pkcs12 -export -out Cert.p">
+  
+    <link rel="alternative" href="/atom.xml" title="powintarmd blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src="//push.zhanzhang.baidu.com/push.js"></script>
+</head></html>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="powintarmd blog" rel="home">powintarmd blog</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">powintarmd blog, just another blog</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/atom.xml">RSS</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/sitemap.xml">Site map</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/more/followme.html">Follow me</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-将PEM证书转换为PFX,P12格式" class="post-将PEM证书转换为PFX,P12格式 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      将PEM证书转换为PFX,P12格式
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://powintarmd.github.io/将PEM证书转换为PFX,P12格式/" data-id="ckskirtzy00059cv9oq0z8lko" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>PEM 证书不受支持，它们必须转换为 PKCS#12 (PFX/P12) 格式。</p>
+<h2 id="证书转换"><a href="#证书转换" class="headerlink" title="证书转换"></a>证书转换</h2><blockquote>
+<ul>
+<li>转至 <a href="https://www.openssl.org/community/binaries.html" target="_blank" rel="noopener">https://www.openssl.org/community/binaries.html</a></li>
+<li>下载并安装openssl, 已经安装的则可直接使用openssl.</li>
+<li>从 OpenSSL 安装 bin 文件夹运行以下命令格式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># openssl pkcs12 -export -out Cert.p12 -in cert.pem -inkey key.pem -passin pass:root -passout pass:root</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><strong>[Reference]</strong><br>将 PEM 证书转换为 PFX/P12 格式<br><a href="https://www.ibm.com/support/knowledgecenter/zh/SSPH29_9.0.3/com.ibm.help.common.infocenter.aps/t_ConvertthepfxCertificatetopemFormat068.html" target="_blank" rel="noopener">https://www.ibm.com/support/knowledgecenter/zh/SSPH29_9.0.3/com.ibm.help.common.infocenter.aps/t_ConvertthepfxCertificatetopemFormat068.html</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/将PEM证书转换为PFX,P12格式/">
+    <time datetime="2018-02-16T03:37:15.000Z" class="entry-date">
+        2月 16 2018
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/协议证书/">协议证书</a>, <a class="article-category-link" href="/categories/协议证书/openssl/">openssl</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PEM证书/">PEM证书</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openssl/">openssl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/p12/">p12</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pfx/">pfx</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/Docker-Notes-by-CS-Notes/" rel="prev"><span class="meta-nav">←</span> Docker-Notesby-CS-Notes.md</a></span>
+    
+    
+        <span class="nav-next"><a href="/openwrt定时任务设置/" rel="next">openwrt定时任务设置 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="q">
+        <input type="submit" id="searchsubmit" value="google搜索">
+    </div>
+</form></aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/help-other-people/help-other-people/">help-other-people</a>
+          </li>
+        
+          <li>
+            <a href="/Docker-Notes-by-CS-Notes/">Docker-Notesby-CS-Notes.md</a>
+          </li>
+        
+          <li>
+            <a href="/将PEM证书转换为PFX,P12格式/">将PEM证书转换为PFX,P12格式</a>
+          </li>
+        
+          <li>
+            <a href="/openwrt定时任务设置/">openwrt定时任务设置</a>
+          </li>
+        
+          <li>
+            <a href="/one_book_helping_understand_financial_reports/一本书读懂财报-把控风险的要诀/">一本书读懂财报-把控风险的要诀</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget-content">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">一月 2014</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help/">help</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/help/励志/">励志</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/stock/">stock</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/stock/财报/">财报</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/stock/财报/股市，投资/">股市，投资</a><span class="category-list-count">10</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/协议证书/">协议证书</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/协议证书/openssl/">openssl</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/网络通讯/">网络通讯</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/网络通讯/大小端/">大小端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/路由器/">路由器</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/路由器/openwrt/">openwrt</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/通用技术/">通用技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/通用技术/Docker/">Docker</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/默认/">默认</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS-Notes/">CS-Notes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PEM证书/">PEM证书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cron/">cron</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help/">help</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openssl/">openssl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/">openwrt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/p12/">p12</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/people/">people</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pfx/">pfx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stock/">stock</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/励志/">励志</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大小端/">大小端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/财报/">财报</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/默认/">默认</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/CS-Notes/" style="font-size: 10px;">CS-Notes</a> <a href="/tags/PEM证书/" style="font-size: 10px;">PEM证书</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/help/" style="font-size: 10px;">help</a> <a href="/tags/openssl/" style="font-size: 10px;">openssl</a> <a href="/tags/openwrt/" style="font-size: 10px;">openwrt</a> <a href="/tags/p12/" style="font-size: 10px;">p12</a> <a href="/tags/people/" style="font-size: 10px;">people</a> <a href="/tags/pfx/" style="font-size: 10px;">pfx</a> <a href="/tags/stock/" style="font-size: 20px;">stock</a> <a href="/tags/励志/" style="font-size: 10px;">励志</a> <a href="/tags/大小端/" style="font-size: 10px;">大小端</a> <a href="/tags/财报/" style="font-size: 20px;">财报</a> <a href="/tags/默认/" style="font-size: 10px;">默认</a>
+    </div>
+  </aside>
+
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2021 powintarmd
+    All rights reserved.</p>
+    <!-- <p>Powered by <a href="https://baidu.com/" target="_blank">baidu</a></p> -->
+
+    <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280232882'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280232882%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</footer>
+
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
