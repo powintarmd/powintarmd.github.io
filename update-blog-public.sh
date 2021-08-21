@@ -24,11 +24,11 @@ git remote set-url --add origin git@github.com:powintarmd/powintarmd.github.io.g
 
 git status
 pause 'Press any key to continue...'
-git diff origin/master
+git diff origin/master2
 pause 'Press any key to continue...'
-git fetch origin master
+git fetch origin master2
 pause 'Press any key to continue...'
-git merge origin/master
+git merge origin/master2
 pause 'Press any key to continue...'
 git add -A
 git status
@@ -47,7 +47,8 @@ git status
 pause 'Press any key to continue...'
 git log --oneline -10
 pause 'Press any key to continue...'
-git push -u origin master
+# git push -u origin master
+git push origin master:master2
 
 # [Reference]
 # https://www.cyberciti.biz/tips/linux-unix-pause-command.html
